@@ -38,4 +38,8 @@ jobs:
       if: success()
       run: |
         docker build -t my-app:latest .
+        
+    - name: List Docker images
+      run: docker images
+
 
