@@ -31,3 +31,11 @@ jobs:
 
     - name: Run tests
       run: pytest
+      
+      
+   # Step 3: Build Docker image (only if tests succeed)
+    - name: Build Docker image
+      if: success()
+      run: |
+        docker build -t my-app:latest .
+
