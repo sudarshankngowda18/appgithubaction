@@ -1,5 +1,5 @@
 import pytest
-from src.gradio_ui import calculate_ui
+from src.ui import calculate_ui
 
 def test_gradio_addition(monkeypatch):
     class MockResponse:
