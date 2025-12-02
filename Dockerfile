@@ -14,7 +14,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Expose port if your app runs a web server (optional)
+EXPOSE 7860
 EXPOSE 5000
 
 # Default command to run your app
-CMD ["python", "app.py"]
+CMD ["python", "ui.py"]
