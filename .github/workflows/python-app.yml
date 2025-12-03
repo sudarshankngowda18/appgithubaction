@@ -37,18 +37,15 @@ jobs:
       run: pytest tests/test_gradio.py
       
       
-   # Step 3: Build Docker image (only if tests succeed)
+    # Step 3: Build Docker image (only if tests succeed)
     - name: Build Docker image
-      if: success()
-      run: |
-        docker build -t my-app:latest .
+      # if: success()
+      run: docker build -t my-app:latest .
+        
         
     - name: List Docker images
       run: docker images
       
     - name: Show Docker image size
-      run: |
-        echo "Docker image size:"
-        docker images my-app:latest --format "{{.Repository}}:{{.Tag}} -> {{.Size}}"
-
+      run: docker images my-app:latest --format "{{.Repository}}:{{.Tag}} -> {{.Size}}"
 
