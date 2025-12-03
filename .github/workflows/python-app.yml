@@ -45,5 +45,10 @@ jobs:
         
     - name: List Docker images
       run: docker images
+      
+    - name: Show Docker image size
+      run: |
+        echo "Docker image size:"
+        docker images my-app:latest --format "{{.Repository}}:{{.Tag}} -> {{.Size}}"
 
 
