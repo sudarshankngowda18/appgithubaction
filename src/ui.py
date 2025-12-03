@@ -14,7 +14,9 @@ iface = gr.Interface(
 )
 
 # Launch on a fixed port
-iface.launch(server_port=7860)
+if __name__ == "__main__":
+
+    iface.launch(server_port=7860)
 
 # TO  CLOSE THE PORT RUN BELOW TWO COMMANDS IN COMMAND PROMPT
 # netstat -ano | findstr 7860
