@@ -17,7 +17,7 @@ jobs:
 
     steps:
     - name: Check out code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -29,14 +29,12 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-
     - name: Run flask tests
       run: pytest tests/test_flask.py
 
     - name: Run gradio tests
       run: pytest tests/test_gradio.py
-      
-    # Build Docker image (only runs if tests succeed)
+
     - name: Build Docker image
       run: docker build -t my-app:latest .
 
